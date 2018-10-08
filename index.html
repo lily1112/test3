@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>oppo手机官网</title>
+</head>
+<link rel="stylesheet" type="text/css" href="OPPO.css">
+<body>
+	<div id="box">
+		<div class="text">
+			<div class="logo">
+				<img src="images/8.png">
+			</div>
+			<ul class="list">
+				<li class="menu"><a href="#">手机</a>
+					<ul class="menu-zi">
+						<li class="trans"><a href="#"><img src="images/13.png"></a></li>
+						<div class="menu-zi2">
+							<div>
+								<a href="#"><img src="images/14.png"></a>
+								<a href="#"><img src="images/15.png"></a>
+								<a href="#"><img src="images/16.png"></a>
+								<a href="#"><img src="images/17.png"></a>
+							</div>
+							<div>
+								<a href="#"><img src="images/18.png"></a>
+								<a href="#"><img src="images/19.png"></a>
+							</div>
+						</div>
+					</ul>
+				</li>
+				<li><a href="#">品牌</a></li>
+				<li><a href="#">商城</a></li>
+				<li><a href="#">体验店</a></li>
+				<li><a href="#">服务</a></li>
+				<li><a href="#">社区</a></li>
+				<li><a href="#">colorOS</a></li>
+				<li><a href="#">云服务</a></li>
+			</ul>
+			<div class="logo1">
+				<a href="#"><img src="images/9.png"></a>
+			</div>
+		</div>
+		<p class="num">
+			<span></span><span></span><span></span><span></span>
+		</p>
+		<a class="prev" href="#"><</a>
+		<a class="next" href="#">></a>
+		<img class="img1" src="images/1.png">
+	</div>
+	<div class="pic1 clearfix">
+		<a href="#"><img src="images/4.png" class="left"></a>
+		<a href="#"><img src="images/5.png" class="right"></a>
+	</div>
+	<div class="pic2 clearfix">
+		<a href="#"><img src="images/6.png" class="left1"></a>
+		<a href="#"><img src="images/7.png" class="right1"></a>
+	</div>
+	<div class="boxlast">
+		<div class="lastleft">
+			<ul>
+				<li>推荐机型</li>
+				<li><a href="#">R15</a></li>
+				<li><a href="#">R15梦境版</a></li>
+				<li><a href="#">A1</a></li>
+				<li><a href="#">A3</a></li>
+			</ul>
+			<ul>
+				<li>服务</li>
+				<li><a href="#">以旧换新</a></li>
+				<li><a href="#">服务网点查询</a></li>
+				<li><a href="#">零件配件查询</a></li>
+				<li><a href="#">官方授权网点</a></li>
+				<li><a href="#">预置软件公式</a></li>
+			</ul>
+			<ul>
+				<li>关于我们</li>
+				<li><a href="#">关于OPPO</a></li>
+				<li><a href="#">新闻资讯</a></li>
+				<li><a href="#">媒体联络</a></li>
+				<li><a href="#">加入我们</a></li>
+			</ul>
+			<ul>
+				<li>商务合作</li>
+				<li><a href="#">开放平台</a></li>
+				<li><a href="#">采购相关</a></li>
+			</ul>
+		</div>
+		<div class="lastright">
+			<div class="logo3">
+				<img src="images/10.png"class="img3">
+				<span><a href="#">在线客服</a></span>
+			</div>
+			<div class="number">4001-666-888</div>
+			<div class="rx">24小时全国热线</div>
+		</div>
+	</div>
+	<hr>
+	<div class="footer">
+		<div class="fl">
+			<ul>
+				<li>        © 2005 - 2018 </li>
+				<li> OPPO</li>
+				<li>版权所有 </li>
+				<li>粤 ICP备08130115号-1</li>
+				<li>联系方式： 4001-666-888</li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="ft"></div>
+	</div>
+	<script>
+		/*
+			需求：
+			1.点击右键头 显示下一张图片 和对应的数字和文字 判断最大值
+			2.点击左箭头 显示上一张图片 和对应的数字和文字 判断最大值
+		*/
+		//获取节点
+		var box=document.getElementById('box');
+		var prev=document.getElementsByClassName('prev');
+		var next=document.getElementsByClassName('next');
+		var oText=document.getElementsByClassName('text');
+		var oNum=document.getElementsByClassName('num');
+		var img=document.getElementsByClassName('img1');
+		console.log(box,prev,next,oText,oNum,img);
+		
+		//声明数组图片
+		var arr=['images/1.png','images/2.png','images/3.png'];
+		//声明变量
+		var num=0;
+		
+		function show(){
+			//默认图片
+			img.src=arr[num];
+			//默认显示文字
+		}
+		//调用函数 默认显示
+		show();
+		//右键点击 下一张
+		next.onclick=function(){
+			num++;
+			//判断下表最大值
+			if(num==arr.length){
+				num=0;
+			}
+			show();
+		}
+		//左键点击 上一张
+		prev.onclick=function(){
+		num--;
+		//判断下标最小值
+		if(num==-1){
+			num=arr.length-1;
+		}
+		show();
+	}
+
+	</script>
+</body>
+</html>
